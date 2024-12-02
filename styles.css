@@ -1,0 +1,539 @@
+*{
+    margin: 0;
+    padding: 0;
+    cursor: none;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./fonts/Satoshi-Medium.woff2") format("woff2"),
+       url("./fonts/Satoshi-Medium.woff") format("woff"),
+       url("./fonts/Satoshi-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+a, button, input, textarea, select {
+    cursor: none !important; /* Disable default cursor for interactive elements */
+}
+html{
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure the body and html are 100% width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Include padding and borders in width calculation */
+}
+
+/* Ensure no extra margin or padding on the body */
+body {
+    background: #01060B;
+    height: 500em;
+    width: 100%; /* Set to 100% width */
+    flex-direction: column;
+    justify-content: space-between;
+    place-content: center;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center; 
+}
+
+/* Small pointer cursor */
+.cursor-pointer {
+    z-index: 1000;
+    position: fixed;
+    background: #ffffff; /* White for better visibility */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+/* Larger delayed cursor */
+.cursor-delayed {
+    z-index: 999;
+    position: fixed;
+    background: #2696E8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #2696E8,
+                0 0 60px #2696E8,
+                0 0 100px #2696E8;
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+    transition: top 0.1s ease, left 0.1s ease; /* Smooth movement */
+}
+
+/* Glow animation for delayed cursor */
+@keyframes colors {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+  
+  .cursor-delayed:before{
+    content: '';
+    position: absolute;
+    background: #2696E8;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+  }
+
+footer{
+    height: 200em;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/*houdini*/
+
+  :root {
+    font-family: "MyCustomFont";
+  
+    --stripe-color: #fff;
+    --bg: var(--stripe-color);
+    --maincolor: var(--bg);
+  }
+
+  
+  /*custom*/
+  
+  .wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .hero {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%; 
+  }
+  
+  
+  :has(:checked) {
+    --stripe-color: #000;
+  }
+  :has(:checked) .hero,
+  :has(:checked) .hero::after {
+    filter: blur(10px) opacity(50%) saturate(200%);
+  }
+  
+  .content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-flow: column;
+    gap: 4.5%;
+    text-align: center;
+    mix-blend-mode: difference;
+    -webbkit-mix-blend-mode: difference;
+    filter: invert(1);
+  }
+  
+  .h1--scalingSize {
+    font-size: calc(1rem - -5vw);
+    position: relative;
+  }
+  
+  #switch {
+    appearance: none;
+    -webkit-appearance: none;
+    opacity: 0;
+  }
+  
+  [for="switch"] {
+    transition: 0.15s linear(0 0%, 0.16 16.85%, 0.32 31.73%, 1 100%);
+    will-change: transform, font-weight;
+    padding: 0.5rem;
+  }
+  
+  [for="switch"]:where(:hover, :active, :focus-within) {
+    /*transform: scale(1.2);
+    font-weight: 900;*/
+    transition: 0.3s ease;
+    animation: animSwitch 0.2s alternate;
+    & .icon {
+      animation-play-state: paused;
+    }
+  }
+  
+  @keyframes animSwitch {
+    50% {
+      transform: scale(1.2);
+      font-weight: 900;
+    }
+  }
+  
+  /*icon houdini*/
+  .icon {
+    width: 1lh;
+    height: 1lh;
+    aspect-ratio: 1/1;
+    padding: 0.15em 0.30rem;
+    border-radius: calc(1px / 0);
+    border: 1px dashed;
+    --blink-opacity: 1;
+    animation: blink-animation 2s ease-in-out infinite running;
+  }
+  
+ 
+  
+
+
+
+
+
+  
+#stars, #stars2, #stars3 {
+    mix-blend-mode: difference;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Stars are at the back */
+  }
+  
+  #stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 
+      1343px 293px #FFF, 1437px 1331px #FFF, 1059px 752px #FFF, 44px 1495px #FFF, 
+      1979px 1230px #FFF, 971px 352px #FFF, 287px 195px #FFF, 1382px 2016px #FFF, 
+      1795px 971px #FFF, 263px 1866px #FFF, 1340px 2355px #FFF, 940px 300px #FFF,
+      1500px 1200px #FFF, 500px 1500px #FFF, 300px 500px #FFF, 1900px 100px #FFF,
+      2000px 1200px #FFF, 600px 800px #FFF, 400px 1800px #FFF, 1800px 1000px #FFF,
+      1000px 500px #FFF, 1100px 1100px #FFF, 400px 1300px #FFF, 1200px 400px #FFF,
+      500px 100px #FFF, 800px 1300px #FFF, 700px 1400px #FFF, 400px 1000px #FFF,
+      1600px 1200px #FFF, 1300px 200px #FFF, 1200px 500px #FFF, 1450px 1100px #FFF,
+      900px 800px #FFF, 2200px 1300px #FFF, 1900px 1700px #FFF, 1200px 900px #FFF;
+    animation: animStar 50s linear infinite;
+  }
+  
+  #stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 
+      1132px 235px #FFF, 978px 1621px #FFF, 1794px 352px #FFF, 946px 1786px #FFF, 
+      1050px 1000px #FFF, 1232px 1245px #FFF, 1332px 500px #FFF, 1874px 400px #FFF,
+      1013px 1740px #FFF, 1190px 520px #FFF, 950px 1530px #FFF, 1680px 320px #FFF,
+      1150px 1200px #FFF, 1700px 550px #FFF, 1250px 680px #FFF, 760px 1400px #FFF,
+      500px 300px #FFF, 1800px 1700px #FFF, 1300px 1100px #FFF, 1200px 200px #FFF,
+      1350px 800px #FFF, 650px 1900px #FFF, 1100px 1400px #FFF, 1500px 200px #FFF,
+      200px 1300px #FFF, 1900px 1000px #FFF, 800px 900px #FFF, 1700px 600px #FFF;
+    animation: animStar 100s linear infinite;
+  }
+  
+  #stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 
+      1997px 1312px #FFF, 895px 426px #FFF, 1695px 578px #FFF, 307px 1585px #FFF, 
+      2560px 1800px #FFF, 1730px 1210px #FFF, 1450px 600px #FFF, 1300px 750px #FFF,
+      1700px 2100px #FFF, 650px 1700px #FFF, 900px 1300px #FFF, 1450px 1500px #FFF,
+      1200px 1700px #FFF, 1000px 200px #FFF, 1800px 1200px #FFF, 1200px 500px #FFF,
+      100px 1100px #FFF, 600px 1500px #FFF, 1450px 1400px #FFF, 1200px 1600px #FFF,
+      1700px 300px #FFF, 1100px 100px #FFF, 1600px 1300px #FFF, 1400px 1800px #FFF,
+      2100px 100px #FFF, 100px 1800px #FFF, 300px 400px #FFF, 900px 1100px #FFF;
+    animation: animStar 150s linear infinite;
+  }
+  
+  /* Animations for seamless scrolling effect */
+  @keyframes animStar {
+    from {
+      transform: translateY(2000px); /* Start from the bottom of the page */
+    }
+    to {
+      transform: translateY(-2000px); /* Move upwards */
+    }
+  }
+  
+  #title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-top: -60px;
+    padding-left: 10px;
+    z-index: 1; /* Title stays in front */
+  }
+  
+  #title span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+
+
+
+  header{
+    height: 80px;
+    width: 100%;
+    background: rgba(245, 245, 245, 0);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+     font-family: "MyCustomFont";
+}
+
+
+  header .pfp {
+    border-radius: 50%; /* Circular by default */
+    height: 40px;
+    width: 40px;
+    background: gray;
+    position: relative;
+    left: 20px;
+    top: 20px;
+    overflow: hidden;
+    transition: border-radius 0.5s ease, height 0.5s ease, width 0.5s ease, border 0.5s ease;/* Smooth transition */
+  }
+  
+  header .pfp:hover {
+    border-radius: 30px; /* Soft edges when hovered */
+    height: 200px; /* 50% larger than the original height */
+    width: 200px; /* 50% larger than the original width */
+    border: solid rgb(100, 175, 254) 3px;
+  }
+  
+  header .pfp img {
+    image-rendering: smooth; /* Default for high-quality rendering */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image stays properly cropped */
+    transition: transform 2s ease; /* Optional: smooth zoom-in effect */
+  }
+  
+  header .pfp:hover img {
+    transform: scale(1.4); /* Optional: slightly zooms in the image on hover */
+  }
+
+
+
+  header .rainbow {
+    border-radius: 50%; /* Circular by default */
+    height: 40px;
+    width: 40px;
+    background: rgb(26, 31, 46);
+    position: relative;
+    left: 20px;
+    top: 30px;
+    overflow: hidden; /* Ensures the image stays within bounds */
+    transition: border-radius 0.5s ease, height 0.5s ease, width 0.5s ease, border 0.5s ease; /* Smooth transition */
+  }
+  
+  header .rainbow:hover {
+    border-radius: 30px; /* Soft edges when hovered */
+    height: 200px; /* 50% larger than the original height */
+    width: 200px; /* 50% larger than the original width */
+    border: solid rgb(203, 125, 255) 3px;
+  }
+  
+  header .rainbow img {
+    transform: scale(1.3); /* Scales the image initially */
+    image-rendering: smooth; /* Ensures smooth rendering */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains proper aspect ratio while covering */
+    transition: transform 1s ease, opacity 2s ease; /* Smooth zoom and fade effect */
+  }
+  
+  header .rainbow:hover img {
+    transform: scale(1.8); /* Enlarges the image on hover */
+    opacity: 0; /* Hides the image for text visibility */
+  }
+  
+  header .rainbow .hover-text {
+    position: absolute;
+    top: 20%; /* Adjust for main text */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center align */
+    color: white; /* Text color */
+    font-size: 18px; /* Adjust as needed */
+    font-weight: bold; /* Make it stand out */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    text-align: center;
+  }
+  
+  header .rainbow .hover-subtext-1 {
+    position: absolute;
+    top: 45%; /* Adjust for first subtext */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center align */
+    color: white; /* Text color */
+    font-size: 14px; /* Adjust size */
+    font-weight: normal; /* Subtle styling */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    text-align: start;
+    text-decoration: none;
+  }
+  
+  header .rainbow .hover-subtext-2 {
+    position: absolute;
+    top: 70%; /* Adjust for second subtext */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center align */
+    color: white; /* Text color */
+    font-size: 14px; /* Adjust size */
+    font-weight: normal; /* Subtle styling */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    text-align: start;
+    text-decoration: none;
+  }
+
+  header .rainbow a {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Changes the text color to white */
+  }
+  
+  header .rainbow a:hover {
+    color: #a4bdff; /* Optional: Change color when the link is hovered */
+  }
+  
+  header .rainbow:hover .hover-text,
+  header .rainbow:hover .hover-subtext-1,
+  header .rainbow:hover .hover-subtext-2 {
+    opacity: 1; /* Show text on hover */
+  }
+
+
+  
+
+
+
+  header .scrollup {
+    border-radius: 50%; /* Circular by default */
+    height: 40px;
+    width: 40px;
+    background: rgb(26, 31, 46);
+    position: absolute;
+    right: 20px;
+    top: 47.5vh;
+    overflow: hidden; /* Ensures the image stays within bounds */
+    transition: border-radius 0.5s ease, height 0.5s ease, width 0.5s ease, border 0.5s ease; /* Smooth transition */
+  }
+  
+  header .scrollup:hover {
+    border-radius: 50%; /* Soft edges when hovered */
+    height: 50px; /* 50% larger than the original height */
+    width: 50px; /* 50% larger than the original width */
+    border: solid rgb(255, 255, 255) 3px;
+  }
+  
+  header .scrollup img {
+    image-rendering: smooth; /* Ensures smooth rendering */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains proper aspect ratio while covering */
+    transition: transform 1s ease, opacity 2s ease; /* Smooth zoom and fade effect */
+  }
+  
+  header .scrollup:hover img {
+    opacity: 0; /* Hides the image for text visibility */
+  }
+  
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500em;
+}
+
+
+/* Individual image blocks */
+.s1, .s2, .s3 {
+  width: 33vw;    /* 33% of the viewport width */
+  height: 33vw;   /* 33% of the viewport width to ensure it's a square */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;  /* Remove any default margin or gap between items */
+}
+
+/* Image styling */
+.starb, .hoodie, .msc {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;  /* Smooth zoom effect + opacity transition */
+}
+
+/* Subtle zoom effect on hover */
+.starb:hover, .hoodie:hover, .msc:hover {
+  transform: scale(1.05);  /* Slight zoom effect */
+}
+
+/* Styling for text below each image */
+.text {
+  margin-top: 10px;  /* Space between the image and the text */
+  text-align: center;  /* Center the text horizontally */
+  color: black;  /* Initial text color */
+  font-size: 1.2em;  /* Font size */
+}
+
+/* Titles section */
+.titles {
+  background: red;
+  padding: 20px;  /* Optional: Add some padding */
+  text-align: center;  /* Center the text in the titles */
+  width: 100%;  /* Make the titles section full width */
+}
+
+
+
+canvas {
+  z-index: 1;
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: difference;
+}

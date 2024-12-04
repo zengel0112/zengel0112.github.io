@@ -97,7 +97,8 @@ body {
   }
 
 footer{
-    height: 200em;
+  background: yellow;
+    height: 10em;
     width: 100%;
 }
 
@@ -461,9 +462,10 @@ footer{
   
   header .scrollup:hover {
     border-radius: 50%; /* Soft edges when hovered */
-    height: 50px; /* 50% larger than the original height */
-    width: 50px; /* 50% larger than the original width */
-    border: solid rgb(255, 255, 255) 3px;
+    height: 40px; /* 50% larger than the original height */
+    width: 40px; /* 50% larger than the original width */
+    box-sizing: border-box;  /* Includes the border inside the width/height */
+    border: solid rgb(255, 255, 255) 3px;  /* Border inside the element */
   }
   
   header .scrollup img {
@@ -481,53 +483,163 @@ footer{
 
 
 
-main {
+  main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
     width: 100%;
     height: 500em;
+    background-color: rgba(255, 0, 0, 0);
 }
 
+main .pics, .pics2, .pics3{
+  display: flex;
+}
 
 /* Individual image blocks */
 .s1, .s2, .s3 {
-  width: 33vw;    /* 33% of the viewport width */
-  height: 33vw;   /* 33% of the viewport width to ensure it's a square */
+  width: 33.3vw;    /* 33% of the viewport width */
+  height: 33.3vw;   /* 33% of the viewport width to ensure it's a square */
   position: relative;
   overflow: hidden;
   margin-bottom: 0;  /* Remove any default margin or gap between items */
 }
 
 /* Image styling */
-.starb, .hoodie, .msc {
+.ps1, .ps2, .ps3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease, opacity 0.3s ease;  /* Smooth zoom effect + opacity transition */
 }
 
+
 /* Subtle zoom effect on hover */
-.starb:hover, .hoodie:hover, .msc:hover {
+.ps1:hover, .ps2:hover, .ps3:hover {
   transform: scale(1.05);  /* Slight zoom effect */
 }
 
-/* Styling for text below each image */
-.text {
-  margin-top: 10px;  /* Space between the image and the text */
-  text-align: center;  /* Center the text horizontally */
-  color: black;  /* Initial text color */
-  font-size: 1.2em;  /* Font size */
+
+
+.textS1-S3 {
+  position: relative;
+  background-color: rgba(153, 205, 50, 0);
+  height: 5vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 30vw;
 }
 
-/* Titles section */
-.titles {
-  background: red;
-  padding: 20px;  /* Optional: Add some padding */
-  text-align: center;  /* Center the text in the titles */
-  width: 100%;  /* Make the titles section full width */
+.textS1-S3 .text1, .text2, .text3{
+  margin-top: 0.5vw;
+}
+
+.textS1-S3 .text1 {
+  margin-left: 1vw;
+}
+
+.textS1-S3 .text2 {
+  margin-left: 1vw;
+}
+.textS1-S3 .text3 {
+  margin-left: -3.5vw;
 }
 
 
+
+.text2S1-S3 {
+  position: relative;
+  background-color: rgba(153, 205, 50, 0);
+  height: 5vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 30vw;
+}
+
+.text2S1-S3 .text1, .text2, .text3{
+  margin-top: 0.5vw;
+}
+
+.text2S1-S3 .text1 {
+  margin-left: 1vw;
+}
+
+.text2S1-S3 .text2 {
+  margin-left: -1.5vw;
+}
+.text2S1-S3 .text3 {
+  margin-left: -0.7vw;
+}
+
+
+.text3S1-S3 {
+  position: relative;
+  background-color: rgba(153, 205, 50, 0);
+  height: 5vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 30vw;
+}
+
+.text3S1-S3 .text1, .text2, .text3{
+  margin-top: 0.5vw;
+}
+
+.text3S1-S3 .text1 {
+  margin-left: 1vw;
+}
+
+.text3S1-S3 .text2 {
+  margin-left: -1.5vw;
+}
+.text3S1-S3 .text3 {
+  margin-left: -0.7vw;
+}
+
+
+
+
+.textS1-S3 h1 {
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
+
+.textS1-S3 h2 {
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
+
+
+
+.text2S1-S3 h1 {
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
+
+.text2S1-S3 h2 {
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
+
+
+.text3S1-S3 h1 {
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
+
+.text3S1-S3 h2 {
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
 
 canvas {
   z-index: 1;

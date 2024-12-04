@@ -141,7 +141,7 @@ gl.viewport(0, 0, canvas.width, canvas.height);
 // Configurable parameters
 const config = {
     particleCount: 5000,
-    textArray: ["Hello im Tsengel.", "你好，我是 Tsengel", "안녕하세요, 저는 츠엥겔입니다", "Hallo, ich bin Tsengel", "Hola, soy Tsengel", "مرحباً، أنا تسينغيل"],
+    textArray: ["Hello Im Tsengel", "你好", "안녕하세요", "Hallo", "Hola", "مرحباً"],
     mouseRadius: 0.1,
     particleSize: 2,
     forceMultiplier: 0.001,
@@ -432,4 +432,37 @@ window.dispatchEvent(new Event('resize'));
 
 
 
-//auto scroll up
+//disable right click 
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
+//disable keyboard shortcuts
+document.addEventListener("keydown", function(event) {
+    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+        event.preventDefault();
+    }
+});
+
+
+
+
+
+
+//scroll up 
+// Wait for the document to be ready
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollUpButton = document.querySelector('.scrollup');
+
+    // Check if the button exists
+    if (scrollUpButton) {
+        // Add click event listener
+        scrollUpButton.addEventListener('click', function() {
+            // Scroll to top with smooth behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+

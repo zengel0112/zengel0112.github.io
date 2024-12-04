@@ -540,10 +540,10 @@ main .pics, .pics2, .pics3{
 }
 
 .textS1-S3 .text2 {
-  margin-left: 1vw;
+  margin-left: 0vw;
 }
 .textS1-S3 .text3 {
-  margin-left: -3.5vw;
+  margin-left: -3.3vw;
 }
 
 
@@ -567,7 +567,7 @@ main .pics, .pics2, .pics3{
 }
 
 .text2S1-S3 .text2 {
-  margin-left: -1.5vw;
+  margin-left: -2.5vw;
 }
 .text2S1-S3 .text3 {
   margin-left: -0.7vw;
@@ -596,7 +596,7 @@ main .pics, .pics2, .pics3{
   margin-left: -1.5vw;
 }
 .text3S1-S3 .text3 {
-  margin-left: -0.7vw;
+  margin-left: 0;
 }
 
 

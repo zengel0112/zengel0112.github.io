@@ -12,7 +12,14 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "dipz";
+  src: url("./fonts/Dipz-Regular.woff2") format("woff2"),
+       url("./fonts/Dipz-Regular.woff") format("woff"),
+       url("./fonts/Dipz-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -33,8 +40,7 @@ html, body {
 
 /* Ensure no extra margin or padding on the body */
 body {
-    background: #01060B;
-    height: 500em;
+    height: auto;
     width: 100%; /* Set to 100% width */
     flex-direction: column;
     justify-content: space-between;
@@ -97,9 +103,18 @@ body {
   }
 
 footer{
-  background: yellow;
-    height: 10em;
+  mix-blend-mode: difference;
+  background: rgb(255, 255, 255);
+    height: 5em;
     width: 100%;
+}
+footer h1{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: white;
+  mix-blend-mode: difference;
+    font-family: dipz;
 }
 
 
@@ -122,24 +137,7 @@ footer{
 
   
   /*custom*/
-  
-  .wrapper {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  
-  .hero {
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    background-size: 300%, 200%;
-    background-position: 50% 50%, 50% 50%; 
-  }
+
   
   
   :has(:checked) {
@@ -151,10 +149,11 @@ footer{
   }
   
   .content {
-    position: absolute;
+    padding-bottom: 10vh;
     inset: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     place-content: center;
     place-items: center;
@@ -165,62 +164,25 @@ footer{
     -webbkit-mix-blend-mode: difference;
     filter: invert(1);
   }
+
+
+
   
   .h1--scalingSize {
     font-size: calc(1rem - -5vw);
-    position: relative;
   }
-  
-  #switch {
-    appearance: none;
-    -webkit-appearance: none;
-    opacity: 0;
-  }
-  
-  [for="switch"] {
-    transition: 0.15s linear(0 0%, 0.16 16.85%, 0.32 31.73%, 1 100%);
-    will-change: transform, font-weight;
-    padding: 0.5rem;
-  }
-  
-  [for="switch"]:where(:hover, :active, :focus-within) {
-    /*transform: scale(1.2);
-    font-weight: 900;*/
-    transition: 0.3s ease;
-    animation: animSwitch 0.2s alternate;
-    & .icon {
-      animation-play-state: paused;
-    }
-  }
-  
-  @keyframes animSwitch {
-    50% {
-      transform: scale(1.2);
-      font-weight: 900;
-    }
-  }
-  
-  /*icon houdini*/
-  .icon {
-    width: 1lh;
-    height: 1lh;
-    aspect-ratio: 1/1;
-    padding: 0.15em 0.30rem;
-    border-radius: calc(1px / 0);
-    border: 1px dashed;
-    --blink-opacity: 1;
-    animation: blink-animation 2s ease-in-out infinite running;
-  }
-  
- 
   
 
 
 
 
 
+
+
+
+
   
-#stars, #stars2, #stars3 {
+  #stars, #stars2, #stars3, #stars4 {
     mix-blend-mode: difference;
     position: absolute;
     top: 0;
@@ -229,84 +191,77 @@ footer{
   }
   
   #stars {
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: 
-      1343px 293px #FFF, 1437px 1331px #FFF, 1059px 752px #FFF, 44px 1495px #FFF, 
-      1979px 1230px #FFF, 971px 352px #FFF, 287px 195px #FFF, 1382px 2016px #FFF, 
-      1795px 971px #FFF, 263px 1866px #FFF, 1340px 2355px #FFF, 940px 300px #FFF,
-      1500px 1200px #FFF, 500px 1500px #FFF, 300px 500px #FFF, 1900px 100px #FFF,
-      2000px 1200px #FFF, 600px 800px #FFF, 400px 1800px #FFF, 1800px 1000px #FFF,
-      1000px 500px #FFF, 1100px 1100px #FFF, 400px 1300px #FFF, 1200px 400px #FFF,
-      500px 100px #FFF, 800px 1300px #FFF, 700px 1400px #FFF, 400px 1000px #FFF,
-      1600px 1200px #FFF, 1300px 200px #FFF, 1200px 500px #FFF, 1450px 1100px #FFF,
-      900px 800px #FFF, 2200px 1300px #FFF, 1900px 1700px #FFF, 1200px 900px #FFF;
-    animation: animStar 50s linear infinite;
-  }
-  
-  #stars2 {
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: 
-      1132px 235px #FFF, 978px 1621px #FFF, 1794px 352px #FFF, 946px 1786px #FFF, 
-      1050px 1000px #FFF, 1232px 1245px #FFF, 1332px 500px #FFF, 1874px 400px #FFF,
-      1013px 1740px #FFF, 1190px 520px #FFF, 950px 1530px #FFF, 1680px 320px #FFF,
-      1150px 1200px #FFF, 1700px 550px #FFF, 1250px 680px #FFF, 760px 1400px #FFF,
-      500px 300px #FFF, 1800px 1700px #FFF, 1300px 1100px #FFF, 1200px 200px #FFF,
-      1350px 800px #FFF, 650px 1900px #FFF, 1100px 1400px #FFF, 1500px 200px #FFF,
-      200px 1300px #FFF, 1900px 1000px #FFF, 800px 900px #FFF, 1700px 600px #FFF;
-    animation: animStar 100s linear infinite;
-  }
-  
-  #stars3 {
     width: 3px;
     height: 3px;
     background: transparent;
     box-shadow: 
-      1997px 1312px #FFF, 895px 426px #FFF, 1695px 578px #FFF, 307px 1585px #FFF, 
-      2560px 1800px #FFF, 1730px 1210px #FFF, 1450px 600px #FFF, 1300px 750px #FFF,
-      1700px 2100px #FFF, 650px 1700px #FFF, 900px 1300px #FFF, 1450px 1500px #FFF,
-      1200px 1700px #FFF, 1000px 200px #FFF, 1800px 1200px #FFF, 1200px 500px #FFF,
-      100px 1100px #FFF, 600px 1500px #FFF, 1450px 1400px #FFF, 1200px 1600px #FFF,
-      1700px 300px #FFF, 1100px 100px #FFF, 1600px 1300px #FFF, 1400px 1800px #FFF,
-      2100px 100px #FFF, 100px 1800px #FFF, 300px 400px #FFF, 900px 1100px #FFF;
-    animation: animStar 150s linear infinite;
+      2000px 100px #FFF, 2300px 400px #FFF, 1800px 200px #FFF, 300px 500px #FFF,
+      2800px 700px #FFF, 320px 800px #FFF, 400px 1000px #FFF, 1500px 600px #FFF, 
+      1900px 1200px #FFF, 2500px 1800px #FFF, 1000px 1500px #FFF, 500px 700px #FFF,
+      1200px 1100px #FFF, 1700px 1800px #FFF, 1400px 400px #FFF, 800px 600px #FFF,
+      1000px 1300px #FFF, 1600px 900px #FFF, 300px 1400px #FFF, 1500px 1800px #FFF,
+      500px 1800px #FFF, 200px 1300px #FFF, 2500px 600px #FFF, 2200px 300px #FFF,
+      1600px 1200px #FFF, 1300px 500px #FFF, 1800px 400px #FFF, 1200px 700px #FFF, 
+      1400px 1500px #FFF, 500px 200px #FFF;
+    animation: animStar 50s linear infinite;
+  }
+  
+  #stars2 {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    box-shadow: 
+      1800px 400px #FFF, 1300px 900px #FFF, 1600px 500px #FFF, 1000px 800px #FFF,
+      1400px 1000px #FFF, 1700px 200px #FFF, 1300px 1100px #FFF, 500px 700px #FFF,
+      1000px 1500px #FFF, 1200px 1100px #FFF, 1600px 1300px #FFF, 1800px 500px #FFF,
+      1500px 700px #FFF, 1300px 1200px #FFF, 100px 900px #FFF, 800px 1500px #FFF,
+      1200px 500px #FFF, 1900px 400px #FFF, 2000px 700px #FFF, 1100px 1000px #FFF,
+      1500px 300px #FFF, 1300px 100px #FFF, 800px 1100px #FFF, 1500px 800px #FFF;
+    animation: animStar 100s linear infinite;
+  }
+  
+  #stars3 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 
+      2200px 100px #FFF, 2500px 500px #FFF, 2000px 300px #FFF, 1000px 200px #FFF,
+      1700px 800px #FFF, 1300px 1500px #FFF, 1800px 1300px #FFF, 2200px 700px #FFF,
+      1900px 1000px #FFF, 1500px 200px #FFF, 1700px 1800px #FFF, 600px 700px #FFF,
+      1200px 1600px #FFF, 1400px 1300px #FFF, 1500px 400px #FFF, 1800px 500px #FFF,
+      2000px 1000px #FFF, 800px 1200px #FFF, 1000px 1000px #FFF, 200px 700px #FFF,
+      1600px 1500px #FFF, 700px 1100px #FFF, 1000px 1500px #FFF, 1200px 500px #FFF,
+      1800px 600px #FFF, 1300px 1700px #FFF;
+    animation: animStar 100s linear infinite;
+  }
+  
+  /* New Larger Stars */
+  #stars4 {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    box-shadow: 
+      150px 250px #FFF, 2300px 600px #FFF, 1700px 1000px #FFF, 1800px 1200px #FFF,
+      2800px 500px #FFF, 1400px 1800px #FFF, 1000px 300px #FFF, 500px 1300px #FFF,
+      2500px 900px #FFF, 1100px 200px #FFF, 700px 1700px #FFF, 1800px 300px #FFF,
+      2000px 1000px #FFF, 1600px 500px #FFF, 1300px 200px #FFF, 2400px 1400px #FFF,
+      500px 800px #FFF, 1600px 1100px #FFF, 1300px 900px #FFF, 1500px 1800px #FFF,
+      2100px 300px #FFF, 1900px 1400px #FFF, 200px 1000px #FFF, 1900px 700px #FFF;
+    animation: animStar 20s linear infinite;
   }
   
   /* Animations for seamless scrolling effect */
   @keyframes animStar {
     from {
-      transform: translateY(2000px); /* Start from the bottom of the page */
+      transform: translateY(100vh); /* Start from the bottom of the page */
     }
     to {
-      transform: translateY(-2000px); /* Move upwards */
+      transform: translateY(-100vh); /* Move upwards */
     }
   }
   
-  #title {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    color: #FFF;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 50px;
-    letter-spacing: 10px;
-    margin-top: -60px;
-    padding-left: 10px;
-    z-index: 1; /* Title stays in front */
-  }
   
-  #title span {
-    background: -webkit-linear-gradient(white, #38495a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
+
 
 
 
@@ -455,7 +410,7 @@ footer{
     background: rgb(26, 31, 46);
     position: absolute;
     right: 20px;
-    top: 47.5vh;
+    top: 50vh;
     overflow: hidden; /* Ensures the image stays within bounds */
     transition: border-radius 0.5s ease, height 0.5s ease, width 0.5s ease, border 0.5s ease; /* Smooth transition */
   }
@@ -479,173 +434,170 @@ footer{
   header .scrollup:hover img {
     opacity: 0; /* Hides the image for text visibility */
   }
+
+
+  #switch {
+    border-radius: 50%; /* Circular by default */
+    height: 40px;
+    width: 40px;
+    background: rgb(26, 31, 46);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    overflow: hidden; /* Ensures the image stays within bounds */
+    transition: border-radius 0.5s ease, height 0.5s ease, width 0.5s ease, border 0.5s ease; /* Smooth transition */
+  }
+  
+/* Hide the checkbox itself */
+.checkbox {
+  display: none;
+}
+
+/* The container that holds the checkbox */
+.checkbox-container {
+  border-radius: 50%; /* Circular by default */
+  height: 40px;
+  width: 40px;
+  background: rgb(26, 31, 46);
+  position: absolute;
+  right: 20px;
+  top: 44.5vh;
+  overflow: hidden; /* Ensures the checkbox stays within bounds */
+  transition: all 0.5s ease; /* Smooth transition for all properties */
+  z-index: 10; /* Ensures it's above other content */
+}
+
+/* Style the label to act as a circular checkbox */
+.checkbox-container label {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(26, 31, 46);
+  border-radius: 50%;
+  display: block;
+  cursor: none;
+  transition: all 0.5s ease; /* Smooth transition for hover effect */
+  box-sizing: border-box; /* Includes padding and border in the element's total size */
+}
+
+/* Hover effect: Enlarges the checkbox smoothly */
+.checkbox-container label:hover {
+  cursor: none;
+  border: solid rgb(255, 255, 255) 3px;
+  width: 40px; /* Enlarges width on hover */
+  height: 40px; /* Enlarges height on hover */
+}
+
+/* Style the checkbox when it's checked */
+.checkbox:checked + label {
+  background-color: rgb(255, 255, 255);
+  border: solid rgb(26, 31, 46) 3px;
+}
+
+
   
 
 
 
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
-    width: 100%;
-    height: 500em;
-    background-color: rgba(255, 0, 0, 0);
-}
-
-main .pics, .pics2, .pics3{
+/* Main Gallery Styling */
+.gallery {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
 }
 
-/* Individual image blocks */
-.s1, .s2, .s3 {
-  width: 33.3vw;    /* 33% of the viewport width */
-  height: 33.3vw;   /* 33% of the viewport width to ensure it's a square */
+/* Individual Gallery Item */
+.gallery-item {
   position: relative;
-  overflow: hidden;
-  margin-bottom: 0;  /* Remove any default margin or gap between items */
+  width: calc(33.333% - 1rem); /* 3 items per row */
+  margin-bottom: 1rem;
+  overflow: hidden; /* Prevents image overflow during zoom */
+  transition: transform 1s ease; /* Smooth transition for image scale */
 }
 
-/* Image styling */
-.ps1, .ps2, .ps3 {
+/* Images */
+.gallery-item img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease, opacity 0.3s ease;  /* Smooth zoom effect + opacity transition */
+  transition: transform 1s ease, z-index 0.3s ease; /* Smooth zoom and z-index transition */
+  transform-origin: center; /* Ensures zoom is centered */
 }
 
-
-/* Subtle zoom effect on hover */
-.ps1:hover, .ps2:hover, .ps3:hover {
-  transform: scale(1.05);  /* Slight zoom effect */
+/* Hover effect for images (zoom and center) */
+.gallery-item:hover img {
+  transform: scale(1.2); /* Zoom effect */
+  z-index: 3; /* Bring to foreground */
+  position: relative; /* Make sure z-index works */
 }
 
-
-
-.textS1-S3 {
-  position: relative;
-  background-color: rgba(153, 205, 50, 0);
-  height: 5vw;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  gap: 30vw;
-}
-
-.textS1-S3 .text1, .text2, .text3{
-  margin-top: 0.5vw;
-}
-
-.textS1-S3 .text1 {
-  margin-left: 1vw;
-}
-
-.textS1-S3 .text2 {
-  margin-left: 0vw;
-}
-.textS1-S3 .text3 {
-  margin-left: -3.3vw;
-}
-
-
-
-.text2S1-S3 {
-  position: relative;
-  background-color: rgba(153, 205, 50, 0);
-  height: 5vw;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  gap: 30vw;
-}
-
-.text2S1-S3 .text1, .text2, .text3{
-  margin-top: 0.5vw;
-}
-
-.text2S1-S3 .text1 {
-  margin-left: 1vw;
-}
-
-.text2S1-S3 .text2 {
-  margin-left: -2.5vw;
-}
-.text2S1-S3 .text3 {
-  margin-left: -0.7vw;
-}
-
-
-.text3S1-S3 {
-  position: relative;
-  background-color: rgba(153, 205, 50, 0);
-  height: 5vw;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  gap: 30vw;
-}
-
-.text3S1-S3 .text1, .text2, .text3{
-  margin-top: 0.5vw;
-}
-
-.text3S1-S3 .text1 {
-  margin-left: 1vw;
-}
-
-.text3S1-S3 .text2 {
-  margin-left: -1.5vw;
-}
-.text3S1-S3 .text3 {
-  margin-left: 0;
-}
-
-
-
-
-.textS1-S3 h1 {
+/* Text Block */
+.text-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
   color: white;
-  mix-blend-mode: difference;
-  font-size: 1vw;
+  text-align: center;
+  padding: 0.5rem;
 }
 
-.textS1-S3 h2 {
-  color: white;
-  mix-blend-mode: difference;
-  font-size: 1vw;
+.text-block h1 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.text-block h2 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Hover effect on entire page (background blur) */
+body.hover-active {
+  filter: blur(5px); /* Apply blur to the body */
+  transition: filter 1s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-item {
+    width: calc(50% - 1rem); /* 2 items per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 100%; /* 1 item per row on mobile */
+  }
 }
 
 
 
-.text2S1-S3 h1 {
-  color: white;
+
+
+
+
+
+
+
+
+
+
+#particle-container {
   mix-blend-mode: difference;
-  font-size: 1vw;
-}
-
-.text2S1-S3 h2 {
-  color: white;
-  mix-blend-mode: difference;
-  font-size: 1vw;
-}
-
-
-.text3S1-S3 h1 {
-  color: white;
-  mix-blend-mode: difference;
-  font-size: 1vw;
-}
-
-.text3S1-S3 h2 {
-  color: white;
-  mix-blend-mode: difference;
-  font-size: 1vw;
-}
-
-canvas {
   z-index: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+}
+canvas {
   position: relative;
   inset: 0;
   width: 100%;
   height: 100%;
-  mix-blend-mode: difference;
 }
+

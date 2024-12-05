@@ -111,6 +111,14 @@ function checkCollision() {
 // Start the collision detection loop
 checkCollision();
 
+
+
+
+
+
+
+
+
 // Save checkbox state to localStorage
 window.addEventListener('DOMContentLoaded', () => {
     const checkbox = document.getElementById('switch');
@@ -465,4 +473,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
 

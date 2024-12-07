@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: yellowgreen;
+    height: 10vh;
+}
+
+main{
+    background: plum;
+    height: auto;
+}
+footer{
+    background: orange;
+    height: 10vh;
+}
+header .logo{
+    position: absolute;
+    height: 200px;
+    top: -60px;
+}
+header .logo img{
+    height: 100%;
+
+}
+
+
+main .container{
+    height: auto;
+    width: 100%;
+}
+
+main .container .img1{
+    height: 500px;
+}
+
+main .container .img1 img{
+    position: relative;
+    left: 15vw;
+    height: 70vw;
+}
+
+
+main .container .img2{
+    width: 100%;
+    position: relative;
+}
+
+main .container .img2 img{
+    width: 100%;
+}

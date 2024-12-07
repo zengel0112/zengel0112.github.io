@@ -1,0 +1,50 @@
+/* Small pointer cursor */
+.cursor-pointer {
+    z-index: 1000;
+    position: fixed;
+    background: #ffffff; /* White for better visibility */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+/* Larger delayed cursor */
+.cursor-delayed {
+    z-index: 999;
+    position: fixed;
+    background: #2696E8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #2696E8,
+                0 0 60px #2696E8,
+                0 0 100px #2696E8;
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+    transition: top 0.1s ease, left 0.1s ease; /* Smooth movement */
+}
+
+/* Glow animation for delayed cursor */
+@keyframes colors {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+  
+  .cursor-delayed:before{
+    content: '';
+    position: absolute;
+    background: #2696E8;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+  }

@@ -4,13 +4,12 @@
     cursor: none;
 }
 header {
-    position: absolute;
-    background: yellowgreen;
+    background: rgb(255, 255, 255);
     height: 10vh;
 }
 
 main {
-    background: linear-gradient(to right, #1025f0 0%, #1025f0 100%);
+    background:linear-gradient(to right, #e6e6e6 0%, #e6e6e6 100%);
     height: auto;
 }
 
@@ -21,8 +20,9 @@ footer {
 
 header .logo {
     position: absolute;
-    height: 200px;
-    top: -60px;
+    height: 50px;
+    top: 20px;
+    left: 10px;
 }
 
 header .logo img {
@@ -35,13 +35,13 @@ main .container {
 }
 
 main .container .img1 {
-    height: auto; 
+    height: 100%; 
     display: flex;
     justify-content: center;
 }
 
 main .container .img1 img {
-    width: 60vh;
+    width: 100%;
 }
 
 main .container .img2, 
@@ -70,6 +70,8 @@ footer .img1 {
 
 footer .img1 img {
     width: 10vw;
+    position: relative;
+    top: 15px;
     filter: brightness(0);
 }
 

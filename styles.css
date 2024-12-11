@@ -68,6 +68,12 @@ footer h1{
     font-family: dipz;
 }
 
+footer span{
+  position: relative;
+  bottom: -50px;
+  left: 10px;
+}
+
 
 
 
